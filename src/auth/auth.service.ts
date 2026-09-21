@@ -50,10 +50,7 @@ export class AuthService {
         throw new NotFoundException(`User not found.`)
       }
 
-      console.log('Input password:', password);
-      console.log('Stored hash:', res[0].userPassword);
       const valid_password = await this.comparePassword(res[0].userPassword, password)
-      console.log('Valid:', valid_password);
       if(!valid_password){
         return `Invalid Credentials`
       }
