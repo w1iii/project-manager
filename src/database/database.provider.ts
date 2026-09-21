@@ -1,4 +1,5 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
+import { Injectable } from "@nestjs/common";
 import { Pool } from 'pg';
 
 
