@@ -4,6 +4,8 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ConfigModule} from '@nestjs/config';
 import * as dotenv from "dotenv";
+import { DatabaseModule } from './database/database.module.js';
+import { AuthModule } from './auth/auth.module.js';
 
 dotenv.config();
 
@@ -25,6 +27,8 @@ console.log("APP SECRET: ", APPSECRET)
       appSecret: APPSECRET,
       serviceId: 'task-buddy',
     }),
+    DatabaseModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
